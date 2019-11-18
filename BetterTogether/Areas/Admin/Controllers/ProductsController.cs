@@ -2,6 +2,7 @@
 using BetterTogether.Models;
 using BetterTogether.Models.ViewModels;
 using BetterTogether.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace BetterTogether.Controllers
 {
+    [Authorize(Roles = StaticDetails.SuperAdminUser)]
     [Area("Admin")]
     public class ProductsController : Controller
     {

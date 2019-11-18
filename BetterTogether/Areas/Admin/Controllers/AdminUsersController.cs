@@ -1,13 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BetterTogether.Data;
 using BetterTogether.Models;
+using BetterTogether.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BetterTogether.Areas.Admin.Controllers
 {
+    [Authorize(Roles = StaticDetails.SuperAdminUser)]
     [Area("Admin")]
     public class AdminUsersController : Controller
     {
