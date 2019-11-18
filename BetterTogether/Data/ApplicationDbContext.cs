@@ -16,5 +16,7 @@ namespace BetterTogether.Data
         public DbSet<Products> Products { get; set; }
         public DbSet<Appointments> Appointments { get; set; }
         public DbSet<ProductsAppointment> ProductsAppointments { get; set; }
+
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
     }
 }
