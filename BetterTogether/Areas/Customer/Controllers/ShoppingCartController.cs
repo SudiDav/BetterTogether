@@ -32,13 +32,13 @@ namespace BetterTogether.Areas.Customer.Controllers
         {
             List<int> shoppingCartList = HttpContext.Session.Get<List<int>>("sessionShoppingCart");
 
-            if (shoppingCartList.Count>0)
+            if ( shoppingCartList != null && shoppingCartList.Count > 0)
             {
                 foreach (var CartItem in shoppingCartList)
                 {
                     Products product = _context.Products.Include(p => p.SpecialTags)
-                                                         .Include(p => p.ProductTypes)
-                                                         .Where(p => p.Id == CartItem).FirstOrDefault();
+                                                        .Include(p => p.ProductTypes)
+                                                        .Where(p => p.Id == CartItem).FirstOrDefault();
                     shoppingCartViewModel.Products.Add(product);
                 }
             }
