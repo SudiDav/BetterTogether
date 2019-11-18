@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using BetterTogether.Models;
+using BetterTogether.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -79,10 +81,35 @@ namespace BetterTogether.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                // Modified the identity User 
+                // Applicatuin User us extening IdenityUser
+                var user = new ApplicationUser { UserName = Input.Email,
+                                                 Email = Input.Email,
+                                                 Name = Input.Name,
+                                                 PhoneNumber = Input.PhoneNumber
+                                               };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                    if (!await _roleManager.RoleExistsAsync(StaticDetails.AdminUser))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(StaticDetails.AdminUser));
+                    }
+                    if (!await _roleManager.RoleExistsAsync(StaticDetails.SuperAdminUser))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(StaticDetails.SuperAdminUser));
+                    }
+
+                    if (Input.IsSuperAdmin)
+                    {
+                        await _userManager.AddToRoleAsync(user, StaticDetails.SuperAdminUser);
+                    }
+                    else
+                    {
+                        await _userManager.AddToRoleAsync(user, StaticDetails.AdminUser);
+                    }
+
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
