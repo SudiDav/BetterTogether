@@ -1,37 +1,68 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
-for details on configuring this project to bundle and minify static web assets. */
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿body {
+    margin-top: 5px;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.btn {
+    width: auto;
+    align-items: center;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+.btn .btn-lg .btn-primary .btn-block {
+    width: auto;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.imageThumbnail {
+    height: 200px;
+    width: auto;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+.form,
+.validation-summary-errors {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+    .form .form-heading {
+        margin-bottom: 10px;
     }
+
+    .form .form-control {
+        position: relative;
+        height: auto;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .form .first {
+        margin-bottom: -1px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+
+    .form .last {
+        margin-bottom: 10px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+.navbar-nav > li a {
+    position: relative;
+    display: block;
+    padding: 15px;
+    color: #777;
 }
+
+.navbar-default .navbar-nav > li a:hover,
+.navbar-nav > li > a:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #999;
+}
+
+/*form{
+    background-color: blue;
+}*/

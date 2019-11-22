@@ -13,14 +13,14 @@
                     </h4>
                 </div>
 
-                <img class="card-img-top imageThumbnail" style="height:100%;" src="@product.ImageUrl" alt="Card Image"/>
+                <img class="card-img-top imageThumbnail" src="@product.ImageUrl" alt="Card Image" asp-append-version="true"/>
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-content-center">
                         <div class="btn-group">
                             <label style="font-size:20px; color:#136ca0"><b>$@product.Price</b></label>
                         </div>
                         <a asp-action="Details" asp-controller="Home" 
-                           class="btn btn-success pull-right btn-outline-info"
+                           class="btn btn-primary pull-right btn-outline-info"
                            asp-route-id="@product.Id">
                             View Details
                         </a>
