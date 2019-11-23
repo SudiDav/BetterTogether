@@ -1,15 +1,15 @@
 ﻿body {
-    margin-top: 5px;
+    margin-top: 50px;
 }
 
-.btn {
+/*.btn {
     width: auto;
     align-items: center;
 }
 
 .btn .btn-lg .btn-primary .btn-block {
     width: auto;
-}
+}*/
 
 .imageThumbnail {
     height: 200px;
@@ -23,31 +23,31 @@
     margin: 0 auto;
 }
 
-    .form .form-heading {
-        margin-bottom: 10px;
-    }
+.form .form-heading {
+    margin-bottom: 10px;
+}
 
-    .form .form-control {
-        position: relative;
-        height: auto;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        padding: 10px;
-        font-size: 16px;
-    }
+.form .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
 
-    .form .first {
-        margin-bottom: -1px;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
-    }
+.form .first {
+    margin-bottom: -1px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
 
-    .form .last {
-        margin-bottom: 10px;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
+.form .last {
+    margin-bottom: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
 
 .navbar-nav > li a {
     position: relative;
@@ -60,7 +60,11 @@
 .navbar-nav > li > a:hover {
     text-decoration: none;
     color: #fff;
-    background-color: #999;
+    background-color: #fafbfc !important;
+}
+
+#loginbtn{     
+    color: #000000;
 }
 
 /*form{

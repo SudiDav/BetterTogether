@@ -3,48 +3,38 @@
 @{
     ViewData["Title"] = "Register";
 }
-<br />
-<h2>@ViewData["Title"]</h2>
 
-<div class="row">
-    <div class="col-md-4">
-        <form class="form" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Name"></label>
-                <input asp-for="Input.Name" class="form-control" />
-                <span asp-validation-for="Input.Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.PhoneNumber"></label>
-                <input asp-for="Input.PhoneNumber" class="form-control" />
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
-                <input asp-for="Input.ConfirmPassword" class="form-control" />
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.IsSuperAdmin"></label>
-                <input asp-for="Input.IsSuperAdmin" type="checkbox" class="form-control" />
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
-    </div>
-</div>
+@if (!ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="All" class="alert alert-danger"></div>
+}
+@*<div class="row">
+    <div class="col-md-4">*@
+    <form class="form" asp-route-returnUrl="@Model.ReturnUrl" method="post"
+          style="margin-top:50px; align-content:center; border-radius:5px;">
+        <h2 class="form-heading">Please register</h2>
+        <label asp-for="Input.Name" class="sr-only" for="inputName">Name</label>
+        <input asp-for="Input.Name" class="form-control first" placeholder="Name" autofocus />
+
+        <label asp-for="Input.Email" class="sr-only">Email</label>
+        <input asp-for="Input.Email" class="form-control" placeholder="Email"/>
+
+        <label asp-for="Input.PhoneNumber" class="sr-only">Phone Number</label>
+        <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Phone Number"/>
+
+        <label asp-for="Input.Password" class="sr-only">Password</label>
+        <input asp-for="Input.Password" class="form-control" placeholder="Password"/>
+
+        <label asp-for="Input.ConfirmPassword" class="sr-only">Confirm Password</label>
+        <input asp-for="Input.ConfirmPassword" class="form-control last" placeholder="Confirm Password"/>
+
+        <label asp-for="Input.IsSuperAdmin"></label>
+        <input asp-for="Input.IsSuperAdmin" type="checkbox" class="form-control" />
+        <br />
+        <button id="loginbtn" type="submit" class="btn btn-lg btn-primary btn-block">Register</button>
+    </form>
+    @*</div>
+</div>*@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
