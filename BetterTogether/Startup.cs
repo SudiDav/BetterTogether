@@ -37,6 +37,12 @@ namespace BetterTogether
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequiredLength = 8;
+                options.Password.RequireDigit = true;
+                options.Password.RequiredUniqueChars = 5;
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 

@@ -45,7 +45,7 @@ namespace BetterTogether.Areas.Identity.Pages.Account
                 }
 
                 // For more information on how to enable account confirmation and password reset please 
-                // visit https://go.microsoft.com/fwlink/?LinkID=532713
+                
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var callbackUrl = Url.Page(
                     "/Account/ResetPassword",

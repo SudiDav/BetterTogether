@@ -14,6 +14,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BetterTogether.Areas.Admin.Controllers
 {
+    /// <summary>
+    /// Appointment controller 
+    /// This controller handles all the functionality for the Appointments
+    /// </summary>
     [Authorize(Roles = StaticDetails.SuperAdminUser + "," + StaticDetails.AdminUser)]
     [Area("Admin")]
     public class AppointmentsController : Controller
